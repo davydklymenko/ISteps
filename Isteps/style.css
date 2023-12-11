@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=DM+Sans:opsz,wght@9..40,600&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(243, 241, 241);
+    font-family: 'Cabin', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+
+.container {
+    text-align: center;
+}
+
+.progress__container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress__container::before {
+    content: '';
+    background-color: rgb(0, 162, 255);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress {
+    background-color: #e8e8e8;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+   transition: .4s ease;
+}
+
+.circle {
+    background-color: white;
+    color: #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgb(0, 162, 255);
+    transition: 0.4s ease;
+}
+
+.circle.active {
+    border: 3px solid  #e8e8e8;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: rgb(0, 162, 255);
+    border-radius: 10px;
+    border: 0px solid rgb(0, 162, 255);
+    color: white;
+    height: 45px;
+    width: 100px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    margin-bottom: -80px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus{
+    outline: 0;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    background-color:  #e8e8e8;
+}
